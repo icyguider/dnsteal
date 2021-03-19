@@ -208,7 +208,8 @@ if __name__ == '__main__':
 	print "%s[+]%s DNS listening on '%s:53'" % (c["g"], c["e"], ip)
 	p_cmds(s,b,ip,z)
 	print "%s[+]%s Once files have sent, use Ctrl+C to exit and save.\n" % (c["g"], c["e"])
-  
+
+	last = []
 	try:
 		r_data = {}
 		while 1:
@@ -242,8 +243,11 @@ if __name__ == '__main__':
 			if v:
 				print '%s[>>]%s %s -> %s:53' % (c["b"], c["e"], p.data_text, ip)
 
-			for d in tmp_data:
-				r_data[fname].append(d)
+			if tmp_data != last:
+				for d in tmp_data:
+					r_data[fname].append(d)
+
+			last = tmp_data
 
 			# print r_data
 		
